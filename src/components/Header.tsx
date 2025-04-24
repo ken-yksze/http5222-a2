@@ -15,7 +15,14 @@ const Header = () => {
         <ul id="header-nav-links">
           {navLinks.map((navLink, i) => (
             <li key={i}>
-              <a href={"#" + navLink.toLowerCase()}>
+              <a
+                href={
+                  "#" +
+                  (navLink.toLowerCase() === "home"
+                    ? "top"
+                    : navLink.toLowerCase())
+                }
+              >
                 {navLink.charAt(0).toUpperCase() + navLink.slice(1)}
               </a>
             </li>
@@ -40,7 +47,12 @@ const Header = () => {
                 <li key={i}>
                   <a
                     className="menu-close"
-                    href={"#" + navLink.toLowerCase()}
+                    href={
+                      "#" +
+                      (navLink.toLowerCase() === "home"
+                        ? "top"
+                        : navLink.toLowerCase())
+                    }
                     onClick={toggleMenu}
                   >
                     {navLink.charAt(0).toUpperCase() + navLink.slice(1)}
